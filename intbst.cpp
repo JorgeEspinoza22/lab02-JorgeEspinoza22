@@ -5,20 +5,27 @@
 #include "intbst.h"
 
 #include <iostream>
-using std::cout;
+using namespace std;
 
 // constructor sets up empty tree
 IntBST::IntBST() { 
+	root = nullptr;
 
 }
 
 // destructor deletes all nodes
 IntBST::~IntBST() {
+	clear(root);
+	root = nullptr;
 
 }
 
 // recursive helper for destructor
 void IntBST::clear(Node *n) {
+	if (n =! nullptr){
+		clear(n->left);
+		clear(n->right);
+		delete n;
 
 }
 
