@@ -5,7 +5,7 @@
 #include "intbst.h"
 
 #include <iostream>
-using std::cout;
+using namespace std;
 
 // constructor sets up empty tree
 IntBST::IntBST() { 
@@ -108,22 +108,28 @@ void IntBST::printPostOrder(Node *n) const {
 
 // return sum of values in tree
 int IntBST::sum() const {
-    return -1; // REPLACE THIS NON-SOLUTION
+	return sum(root);
 }
 
 // recursive helper for sum
 int IntBST::sum(Node *n) const {
-    return -1; // REPLACE THIS NON-SOLUTION
+	if (n == nullptr) {
+		return 0;
+	}
+	return n->info + sum(n->right) + sum(n->left);
 }
 
 // return count of values
 int IntBST::count() const {
-    return -1; // REPLACE THIS NON-SOLUTION
+	return count(root);
 }
 
 // recursive helper for count
 int IntBST::count(Node *n) const {
-    return -1; // REPLACE THIS NON-SOLUTION
+	if (n == nullptr) {
+		return 0;
+	}
+	return 1 + count(n->right) + count(n->left);
 }
 
 // IMPLEMENT THIS FIRST: returns the node for a given value or NULL if none exists
