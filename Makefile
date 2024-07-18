@@ -14,5 +14,4 @@ testbst.o: testbst.cpp intbst.h
     $(CXX) $(CXXFLAGS) -c testbst.cpp -o testbst.o
 
 clean:
-    rm -f *.o $(TARGET)
-
+	rm -f $(OBJS) $(TARGET)
