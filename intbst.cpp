@@ -31,7 +31,7 @@ void IntBST::clear(Node *n) {
 
 // insert value in tree; return false if duplicate
 bool IntBST::insert(int value) {
-	if (root = nullptr) {
+	if (root == nullptr) {
 		root = new Node(value);
 		return true;
 	}
