@@ -31,12 +31,40 @@ void IntBST::clear(Node *n) {
 
 // insert value in tree; return false if duplicate
 bool IntBST::insert(int value) {
-    return false; // REPLACE THIS NON-SOLUTION
+	if (root = nullptr) {
+		root = new Node(value);
+		return true;
+	}
+	else {
+		return insert(value, root);
+	}
 }
 
 // recursive helper for insert (assumes n is never 0)
 bool IntBST::insert(int value, Node *n) {
-    return false; // REPLACE THIS NON-SOLUTION
+	if (value == n-> info) {
+		return false;
+	}
+	else if (value < n->info) {
+		if(n->left == nullptr) {
+			n->left = new Node(value);
+			n->left->parent = n;
+			return true;
+		}
+		else {
+			return insert(value, n->left);
+		}
+	}
+	else if {
+		if (n->right == nullptr) {
+			n->right = new Node(value);
+			n->right->parent = n;
+			return true;
+		}
+		else {
+			return insert(value, n->right);
+		}
+	}
 }
 
 // print tree data pre-order
