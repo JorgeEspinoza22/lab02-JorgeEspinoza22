@@ -22,7 +22,7 @@ IntBST::~IntBST() {
 
 // recursive helper for destructor
 void IntBST::clear(Node *n) {
-	if (n =! nullptr){
+	if (n != nullptr){
 		clear(n->left);
 		clear(n->right);
 		delete n;
