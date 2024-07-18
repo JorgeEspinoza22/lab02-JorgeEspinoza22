@@ -5,7 +5,7 @@
 #include "intbst.h"
 
 #include <iostream>
-using namespace std;
+using std::cout;
 
 // constructor sets up empty tree
 IntBST::IntBST() { 
