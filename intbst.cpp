@@ -26,7 +26,7 @@ void IntBST::clear(Node *n) {
 		clear(n->left);
 		clear(n->right);
 		delete n;
-
+	}
 }
 
 // insert value in tree; return false if duplicate
@@ -199,14 +199,14 @@ IntBST::Node* IntBST::getSuccessorNode(int value) const{
 			curr = curr->left;
 		}
 	}
-	return sucessorNode;
+	return successorNode;
 }
 
 // returns the successor value of the given value or 0 if there is none
 int IntBST::getSuccessor(int value) const{
 	Node* successorNode = getSuccessorNode(value);
 
-	if(successsorNode == nullptr)
+	if(successorNode == nullptr)
 		return 0;
 	return successorNode->info;
 }
