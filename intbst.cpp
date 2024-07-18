@@ -55,7 +55,7 @@ bool IntBST::insert(int value, Node *n) {
 			return insert(value, n->left);
 		}
 	}
-	else if {
+	else  {
 		if (n->right == nullptr) {
 			n->right = new Node(value);
 			n->right->parent = n;
@@ -139,7 +139,7 @@ int IntBST::count(Node *n) const {
 // Whenever you call this method from somewhere else, pass it
 // the root node as "n"
 IntBST::Node* IntBST::getNodeFor(int value, Node* n) const{
-	if ((n == nullptr) or (n->info == value) {
+	if ((n == nullptr) or (n->info == value)) {
 			return n;
 			}
 	if(value < n->info) {
@@ -176,11 +176,12 @@ IntBST::Node* IntBST::getPredecessorNode(int value) const{
 
 // returns the predecessor value of the given value or 0 if there is none
 int IntBST::getPredecessor(int value) const{
+	Node* predecessorNode = getPredecessorNode(value);
 	if(predecessorNode != nullptr) {
 		return predecessorNode->info;
 	}
 	else {
-		return 0;
+		return -1;
 	}
 
 }
