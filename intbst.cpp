@@ -139,32 +139,76 @@ int IntBST::count(Node *n) const {
 // Whenever you call this method from somewhere else, pass it
 // the root node as "n"
 IntBST::Node* IntBST::getNodeFor(int value, Node* n) const{
-    return NULL; // REPLACE THIS NON-SOLUTION
+	if ((n == nullptr) or (n->info == value) {
+			return n;
+			}
+	if(value < n->info) {
+	return getNodeFor(value, n->left);
+	}
+	else {
+	return getNodeFor(value, n->right);
+	}
+	
 }
 
 // returns true if value is in the tree; false if not
 bool IntBST::contains(int value) const {
-    return false; // REPLACE THIS NON-SOLUTION
+	Node* node = getNodeFor(value, root);
+	return node != nullptr;
 }
 
 // returns the Node containing the predecessor of the given value
 IntBST::Node* IntBST::getPredecessorNode(int value) const{
-    return NULL; // REPLACE THIS NON-SOLUTION
+	Node* curr = root;
+	Node* predecessorNode = nullptr;
+
+	while(curr != nullptr) {
+		if(value <= curr->info){
+			curr = curr->left;
+		}
+		else {
+			predecessorNode = curr;
+			curr = curr->right;
+		}
+	}
+	return predecessorNode;
 }
 
 // returns the predecessor value of the given value or 0 if there is none
 int IntBST::getPredecessor(int value) const{
-    return -1; // REPLACE THIS NON-SOLUTION
+	if(predecessorNode != nullptr) {
+		return predecessorNode->info;
+	}
+	else {
+		return 0;
+	}
+
 }
 
 // returns the Node containing the successor of the given value
 IntBST::Node* IntBST::getSuccessorNode(int value) const{
-    return NULL; // REPLACE THIS NON-SOLUTION
+	Node* curr = root;
+	Node* successorNode = nullptr;
+
+	while(curr != nullptr) {
+		if(value >= curr->info) {
+			curr = curr->right;
+		}
+		else {
+			successorNode = curr;
+			curr = curr->left;
+		}
+	}
+	return sucessorNode;
 }
 
 // returns the successor value of the given value or 0 if there is none
 int IntBST::getSuccessor(int value) const{
-    return -1; // REPLACE THIS NON-SOLUTION
+	Node* successorNode = getSuccessorNode(value);
+
+	if(successsorNode == nullptr)
+		return 0;
+	return successorNode->info;
 }
 
 // deletes the Node containing the given value from the tree
